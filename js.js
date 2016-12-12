@@ -53,12 +53,15 @@ $(document).ready(function(){
         backURL += "back3.gif";
     }
     document.body.style.backgroundImage = "url('" + backURL + "')";
+
     /*
      Wowzers Text
      */
     setTimeout(function() {
-        document.getElementById("wowzers").style.display = "inline";
+        document.getElementById("wowzerstxt").style.display = "inline";
+        document.getElementById("omg").style.display = "inline";
         color(30, "wowzerstxt");
+        imageColor(30, "omg");
     },40000);
 
     /*
@@ -116,6 +119,17 @@ $(document).ready(function(){
         }, interval);
     }
 
+    function imageColor(interval, id){
+        var elem2 = document.getElementById(id);
+        var color2 = "";
+        setInterval(function(){
+            color2 = '#' + (function co(lor){   return (lor +=
+                [0,1,2,3,4,5,6,7,8,9,'a','b','c','d','e','f'][Math.floor(Math.random()*16)])
+            && (lor.length == 6) ?  lor : co(lor); })('');
+            elem2.style.backgroundColor = color2;
+        }, interval);
+    }
+
     function domLeft(){
         var elem3 = document.getElementById("domLeft");
         var dom1 = setInterval(function(){
@@ -144,9 +158,9 @@ $(document).ready(function(){
 
     function randomCharity(){
         var charity = [
-            "/web/20150802135413/http://www.blackcharities.net/",
-            "/web/20150802135413/https://www.aspca.org/secure/donate?ms=wb_sub_sitewide-donatelink-orangewhite&initialms=wb_sub_sitewide-donatelink-orangewhite",
-            "/web/20150802135413/https://www.unicefusa.org/donate/end-preventable-child-deaths/20281"
+            "http://www.blackcharities.net/",
+            "https://www.aspca.org/secure/donate?ms=wb_sub_sitewide-donatelink-orangewhite&initialms=wb_sub_sitewide-donatelink-orangewhite",
+            "https://www.unicefusa.org/donate/end-preventable-child-deaths/20281"
         ];
         var random = Math.floor((Math.random() * charity.length));
         return charity[random];

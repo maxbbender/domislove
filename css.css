@@ -86,3 +86,14 @@ h1 {
     text-align: center;
 
 }
+
+#omg {
+    /* Rotate div */
+    -ms-transform: rotate(+30deg); /* IE 9 */
+    -webkit-transform: rotate(+30deg); /* Chrome, Safari, Opera */
+    transform: rotate(+30deg);
+    position:absolute;
+    right:75px;
+    top:500px;
+    display: none;
+}
